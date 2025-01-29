@@ -1,26 +1,65 @@
-
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Management Leaderboard</title>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
+        crossorigin="anonymous">
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Graduate&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="./assets/css/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
-
 <body>
-   <header class="header">
-        <a href="#" class="logo">Kobe Banganay</a>
 
+    <header class="header">
         <nav class="navbar">
-            <a href="#">Home</a>
-            <a href="./pages/page1/index.html">Fundamentals</a>
+            <div class="nav-container">
+                <ul>
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="../page1/index.html">Fundamentals</a></li>
+                </ul>
+            </div>
         </nav>
-   </header>
+    </header>
+   
+    <main>
+        <section id="player-input-section">
+            <h2>Add Players</h2>
+            <form id="new-player-form">
+                <input type="text" id="input-player-name" placeholder="Player Name" required>
+                <input type="number" id="input-player-score" placeholder="Score (0-100)" min="0" max="100" required>
+                <input type="number" id="input-player-level" placeholder="Level" min="1" required>
+                <button type="button" id="btn-add-player"> + Add Player</button>
+            </form>
+            <p id="current-player-count">Players added: 0/10</p>
+        </section>
+    </main>
 
-   <div class="centered-text">
-    <h1>4F</h1>
+    <section id="leaderboard-section">
+        <h2>Leaderboard</h2>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Name:</th>
+                    <th>Score:</th>
+                    <th>Level:</th>
+                </tr>
+            </thead>
+            <tbody id="dynamic-player-list">
+                
+            </tbody>
+        </table>
+    </section>
 
-   </div>
-
+    <script src="./assets/js/scripts.js"></script>
 </body>
 
 </html>

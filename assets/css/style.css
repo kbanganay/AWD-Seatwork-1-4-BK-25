@@ -1,17 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Graduate&display=swap');
+
+
+
+
 * {
 
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: "graduate", serif;
 
 }
-
 
 body {
 
     min-height: 100vh;
-    background: url();
+    background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/A_black_image.jpg/640px-A_black_image.jpg);
     background-size: cover;
 background-position: center;
 background-repeat: no-repeat;
@@ -23,10 +27,10 @@ background-repeat: no-repeat;
 position: fixed;
 top: 0;
 left: 0;
-height: 50px;
+height: 70px;
 width: 100%;
 padding: 20px 100px;
-background:black;
+background:transparent;
 display: flex;
 justify-content: space-between;
 align-items: center;
@@ -38,21 +42,31 @@ z-index: 100;
 
 .logo {
 
-font-size: 32px;
+font-size: 22px;
 color: red;
 text-decoration: none;
 font-weight: 700;
 
 }
 
-.navbar a {
-position: relative;
-font-size: 18px;
-color: red;
-font-weight: 500;
-text-decoration: none;
-margin-left: 40px;
 
+.navbar {
+    background-color: black;
+    padding: 15px;
+    position: sticky;
+    top: 0; 
+    z-index: 1000; 
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease;
+    margin-left: 40px;
+    color: red;
 }
 
 .navbar a::before {
@@ -75,9 +89,25 @@ width: 100%;
 
 }
 
+
 h1 {
-
-color: white;
-text-align: center;
-
+    color: white;
+    text-align: center;
+    margin-top: 5px; 
+    padding-top: 10px; 
+  
 }
+
+
+.footer {
+    background: #838383;
+    padding: 10px 20px;
+    text-align: center;
+    
+    }
+    
+    .copyright {
+    
+        font-size: 0.8em;
+        color: white;
+    }

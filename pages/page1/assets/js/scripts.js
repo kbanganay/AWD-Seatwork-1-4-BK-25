@@ -71,3 +71,31 @@ function addNewPlayer() {
 
 
 document.getElementById("btn-add-player").addEventListener("click", addNewPlayer);
+
+document.getElementById('sort-options').addEventListener('change', function() {
+    const sortBy = this.value;
+    const playerList = document.getElementById('dynamic-player-list');
+
+    // Assuming players is an array of player objects
+    const players = Array.from(playerList.children).map(row => {
+        const name = row.cells[0].innerText;
+        const score = parseInt(row.cells[1].innerText);
+        const level = parseInt(row.cells[2].innerText);
+        return { name, score, level, row };
+    });
+
+    // Sort based on selected criteria
+    players.sort((a, b) => {
+        if (sortBy === 'score') {
+            return b.score - a.score; // Descending order
+        } else if (sortBy === 'level') {
+            return b.level - a.level; // Descending order
+        } else if (sortBy === 'name') {
+            return a.name.localeCompare(b.name); // Ascending order
+        }
+    });
+
+    // Clear the current list and repopulate sorted data
+    playerList.innerHTML = '';
+    players.forEach(player => playerList.appendChild(player.row));
+});

@@ -18,12 +18,17 @@
 </head>
 <body>
 
+    <video autoplay loop muted plays-inline class="bg">
+        <source src="./assets/img/Gameroom.mp4" type="video/mp4">
+    </video>
+
+
     <header class="header">
         <nav class="navbar">
             <div class="nav-container">
                 <ul>
-                    <li><a href="../../index.html">Home</a></li>
-                    <li><a href="../page1/index.html">Fundamentals</a></li>
+                    <li><a href="../../index.html">HOME</a></li>
+                    <li><a href="../page1/index.html">RANKING</a></li>
                 </ul>
             </div>
         </nav>
@@ -32,33 +37,44 @@
     <main>
         <section id="player-input-section">
             <h2>Add Players</h2>
+            <br>
             <form id="new-player-form">
-                <input type="text" id="input-player-name" placeholder="Player Name" required>
-                <input type="number" id="input-player-score" placeholder="Score (0-100)" min="0" max="100" required>
-                <input type="number" id="input-player-level" placeholder="Level" min="1" required>
+                <input type="text" id="input-player-name" placeholder="NAME (MAX 10 CHAR)" required maxlength="10">
+                <input type="number" id="input-player-score" placeholder="Enter Score" min="0" max="100" required>
+                <input type="number" id="input-player-level" placeholder="Enter Level" min="1" required>
                 <button type="button" id="btn-add-player"> + Add Player</button>
             </form>
+            <br>
             <p id="current-player-count">Players added: 0/10</p>
         </section>
     </main>
 
     <section id="leaderboard-section">
+        <br>
         <h2>Leaderboard</h2>
-        
+        <br>
+        <div>
+            <label for="sort-options">Sort by:</label>
+            <select id="sort-options">
+                <option value="name">Name</option>
+                <option value="score">Score</option>
+                <option value="level">Level</option>
+            </select>
+        </div>
+        <br>
         <table>
             <thead>
                 <tr>
-                    <th>Name:</th>
-                    <th>Score:</th>
-                    <th>Level:</th>
+                    <th>Name :</th>
+                    <th>Score :</th>
+                    <th>Level :</th>
                 </tr>
             </thead>
             <tbody id="dynamic-player-list">
-                
+                <!-- Dynamic player list will populate here -->
             </tbody>
         </table>
     </section>
-
     <script src="./assets/js/scripts.js"></script>
 </body>
 

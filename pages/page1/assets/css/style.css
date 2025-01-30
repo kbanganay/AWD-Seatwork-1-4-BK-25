@@ -12,8 +12,18 @@ body {
     padding: 20px;
 }
 
+.bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
 .navbar {
-    background-color: black;
+    background-color: transparent;
     padding: 10px;
     position: sticky;
     top: 0; 
@@ -34,7 +44,7 @@ body {
 }
 
 .nav-container ul li {
-    margin-right: 20px;
+    margin-right: 40px;
 }
 
 .nav-container ul li a {
@@ -44,6 +54,7 @@ body {
     font-weight: bold;
     position: relative;
     transition: color 0.3s ease;
+   
 }
 
 .nav-container ul li a::before {
@@ -79,9 +90,10 @@ main {
     margin-bottom: 20px;
 }
 
-#player-input-area h2, #leaderboard-area h2 {
+.player-input-area h2, #leaderboard-area h2 {
     margin-bottom: 10px;
     color: RED;
+    text-align: center; /* Center text within the area */
 }
 
 form {
@@ -99,6 +111,7 @@ form input {
     background-color: #2a2a2a;
     color: white;
     transition: border 0.2s ease;
+    
 }
 
 form input:focus {
@@ -127,24 +140,30 @@ form button:hover {
     color: #888;
 }
 
-#leaderboard-area h2 {
-    margin-bottom: 10px;
-    color: RED;
+#leaderboard-section h2 {
+    margin: 0; /* Remove margin */
+    margin-bottom: 10px; /* Add space below the heading */
+    color: white;
+    text-align: center; /* Center text within the area */
+    font-size: 40px;
 }
 
 table {
-    width: 100%;
+    width: 100%; /* Make the table take full width of its container */
+    max-width: 800px; /* Optional: limit the max width */
+    margin: 0 auto; /* Center the table */
     border-collapse: collapse;
-    margin-bottom: 20px;
 }
 
 table thead th {
-    padding: 15px;
-    background: RED;
+    position: sticky; /* Make the header sticky */
+    top: 0; /* Position at the top of the table */
+    background: RED; /* Set background color */
     color: white;
-    text-align: left;
+    padding: 15px;
     font-size: 14px;
     border-bottom: 2px solid RED;
+    z-index: 10; /* Ensure the header is above table rows */
 }
 
 table tbody tr {
@@ -160,6 +179,11 @@ table tbody tr:hover {
     background: #3a3a3a;
 }
 
+table th, 
+table td {
+    text-align: center; /* Center-align text in both header and body cells */
+}
+
 table tbody td {
     padding: 15px;
     font-size: 14px;
@@ -167,13 +191,25 @@ table tbody td {
 }
 
 
-#leaderboard-area {
+#leaderboard-section {
     max-width: 800px;
     margin: 20px auto; 
-    padding: 20px;
+    padding: 20px 20px 0; /* Adjust padding to remove space at the top */
     background: #1a1a1a;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    text-align: center; /* Center text within the area */
+    padding-bottom: 50px;
+}
+
+#leaderboard-section div {
+    margin-bottom: 15px; /* Space between dropdown and table */
+}
+
+#sort-options {
+    padding: 5px;
+    font-size: 16px;
+    
 }
 
 .input-error {

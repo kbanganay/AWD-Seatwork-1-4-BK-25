@@ -13,49 +13,49 @@
 }
 
 body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+}
 
-    min-height: 100vh;
-    background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/A_black_image.jpg/640px-A_black_image.jpg);
-    background-size: cover;
-background-position: center;
-background-repeat: no-repeat;
-
+.bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
 }
 
 .header {
-
-position: fixed;
-top: 0;
-left: 0;
-height: 70px;
-width: 100%;
-padding: 20px 100px;
-background:transparent;
-display: flex;
-justify-content: space-between;
-align-items: center;
-z-index: 100;
-
-
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 70px;
+    width: 100%;
+    padding: 20px 100px;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
 }
-
 
 .logo {
-
-font-size: 22px;
-color: red;
-text-decoration: none;
-font-weight: 700;
-
+    font-size: 22px;
+    color: red;
+    text-decoration: none;
+    font-weight: 700;
 }
 
-
 .navbar {
-    background-color: black;
+    background-color: transparent;
     padding: 15px;
     position: sticky;
     top: 0; 
-    z-index: 1000; 
+    z-index: 1000;
 }
 
 .navbar a {
@@ -70,44 +70,57 @@ font-weight: 700;
 }
 
 .navbar a::before {
-
-content: '';
-position: absolute;
-top: 100%;
-left: 0;
-width: 0%;
-height: 2px;
-background:white;
-transition: .3s;
-
-
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: white;
+    transition: .3s;
 }
 
 .navbar a:hover::before {
-
-width: 100%;
-
+    width: 100%;
 }
-
 
 h1 {
     color: white;
     text-align: center;
-    margin-top: 5px; 
-    padding-top: 10px; 
-  
+    margin-top: 5px;
+    padding-top: 10px;
 }
 
+
+.get-started-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Center vertically */
+    font-size: 30px;
+}
+
+.get-started-btn a {
+    background-color: red; /* Button background color */
+    color: white; /* Text color */
+    padding: 15px 30px; /* Padding for the button */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+}
+
+.get-started-btn a:hover {
+    background-color: darkred; /* Darker background on hover */
+    transform: scale(1.05); /* Slightly enlarge the button */
+}
 
 .footer {
     background: #838383;
     padding: 10px 20px;
     text-align: center;
-    
-    }
-    
-    .copyright {
-    
-        font-size: 0.8em;
-        color: white;
-    }
+}
+
+.copyright {
+    font-size: 0.8em;
+    color: white;
+}

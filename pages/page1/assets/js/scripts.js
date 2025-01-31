@@ -1,4 +1,3 @@
-
 const playerFormElement = document.getElementById("new-player-form");
 const playerNameInputElement = document.getElementById("input-player-name");
 const playerScoreInputElement = document.getElementById("input-player-score");
@@ -14,9 +13,6 @@ function updatePlayerCountDisplay() {
 
 function renderPlayerListDisplay() {
     playerListElement.innerHTML = "";
-    
-   
-    playerArray.sort((a, b) => a.score - b.score);
 
     playerArray.forEach((player) => {
         const rowElement = document.createElement("tr");
@@ -43,7 +39,6 @@ function addNewPlayer() {
     const score = parseInt(playerScoreInputElement.value, 10);
     const level = parseInt(playerLevelInputElement.value, 10);
 
- 
     playerNameInputElement.classList.remove("input-error");
     playerScoreInputElement.classList.remove("input-error");
     playerLevelInputElement.classList.remove("input-error");
@@ -51,7 +46,6 @@ function addNewPlayer() {
     if (!name || isNaN(score) || isNaN(level)) {
         alert("PLEASE COMPLETE THE INPUTS.");
 
-        
         if (!name) playerNameInputElement.classList.add("input-error");
         if (isNaN(score)) playerScoreInputElement.classList.add("input-error");
         if (isNaN(level)) playerLevelInputElement.classList.add("input-error");
@@ -59,8 +53,13 @@ function addNewPlayer() {
         return;
     }
 
-    playerArray.push({ name, score, level });
+    // Check if score and level are within the 3-digit limit
+    if (score < 0 || score > 999 || level < 1 || level > 999) {
+        alert("Score must be between 0 and 999 and Level must be between 1 and 999.");
+        return;
+    }
 
+    playerArray.push({ name, score, level });
     playerNameInputElement.value = "";
     playerScoreInputElement.value = "";
     playerLevelInputElement.value = "";
@@ -69,33 +68,33 @@ function addNewPlayer() {
     renderPlayerListDisplay();
 }
 
-
 document.getElementById("btn-add-player").addEventListener("click", addNewPlayer);
 
 document.getElementById('sort-options').addEventListener('change', function() {
     const sortBy = this.value;
-    const playerList = document.getElementById('dynamic-player-list');
 
-    // Assuming players is an array of player objects
-    const players = Array.from(playerList.children).map(row => {
-        const name = row.cells[0].innerText;
-        const score = parseInt(row.cells[1].innerText);
-        const level = parseInt(row.cells[2].innerText);
-        return { name, score, level, row };
-    });
-
-    // Sort based on selected criteria
-    players.sort((a, b) => {
-        if (sortBy === 'score') {
-            return b.score - a.score; // Descending order
-        } else if (sortBy === 'level') {
-            return b.level - a.level; // Descending order
+    // Sort players based on selected criteria
+    playerArray.sort((a, b) => {
+        if (sortBy === 'score' || sortBy === 'level') {
+            return b[sortBy] - a[sortBy]; // Descending order
         } else if (sortBy === 'name') {
             return a.name.localeCompare(b.name); // Ascending order
         }
     });
 
-    // Clear the current list and repopulate sorted data
-    playerList.innerHTML = '';
-    players.forEach(player => playerList.appendChild(player.row));
+    // Re-render the player list after sorting
+    renderPlayerListDisplay();
 });
+
+document.getElementById("input-player-score").addEventListener("input", function() {
+    if (this.value.length > 3) {
+        this.value = this.value.slice(0, 3); // Restrict to 3 digits
+    }
+});
+
+document.getElementById("input-player-level").addEventListener("input", function() {
+    if (this.value.length > 3) {
+        this.value = this.value.slice(0, 3);
+    }
+});
+

@@ -36,38 +36,38 @@
    
     <main>
         <section id="player-input-section">
-            <h2>Add Players</h2>
+            <h2>ADD PLAYERS</h2>
             <br>
             <form id="new-player-form">
                 <input type="text" id="input-player-name" placeholder="NAME (MAX 10 CHAR)" required maxlength="10">
-                <input type="number" id="input-player-score" placeholder="Enter Score" min="0" max="100" required>
-                <input type="number" id="input-player-level" placeholder="Enter Level" min="1" required>
-                <button type="button" id="btn-add-player"> + Add Player</button>
+                <input type="number" id="input-player-score" placeholder="SCORE (MAX 999)" min="0" max="100" required>
+                <input type="number" id="input-player-level" placeholder="LEVEL (MAX 999)" min="1" required>
+                <button type="button" id="btn-add-player"> + ADD PLAYER</button>
             </form>
             <br>
-            <p id="current-player-count">Players added: 0/10</p>
+            <p id="current-player-count">PLAYERS: 0/10</p>
         </section>
     </main>
 
     <section id="leaderboard-section">
         <br>
-        <h2>Leaderboard</h2>
+        <h2>PLAYER RANKINGS</h2>
         <br>
         <div>
             <label for="sort-options">Sort by:</label>
             <select id="sort-options">
-                <option value="name">Name</option>
-                <option value="score">Score</option>
-                <option value="level">Level</option>
+                <option value="name">NAME</option>
+                <option value="score">SCORE</option>
+                <option value="level">LEVEL</option>
             </select>
         </div>
         <br>
         <table>
             <thead>
                 <tr>
-                    <th>Name :</th>
-                    <th>Score :</th>
-                    <th>Level :</th>
+                    <th>NAME :</th>
+                    <th>SCORE :</th>
+                    <th>LEVEL :</th>
                 </tr>
             </thead>
             <tbody id="dynamic-player-list">

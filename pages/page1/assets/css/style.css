@@ -121,17 +121,18 @@ form input:focus {
 
 form button {
     padding: 10px 20px;
-    background: RED;
+    background: red; /* Original background color */
     border: none;
     border-radius: 5px;
     color: white;
     font-size: 14px;
     cursor: pointer;
-    transition: background 0.2s ease;
+    transition: background 0.2s ease, transform 0.2s ease; /* Added transition for transform */
 }
 
 form button:hover {
-    background: RED;
+    background: darkred; /* Change to a darker red on hover */
+    transform: scale(1.05); /* Slightly increase the size on hover */
 }
 
 #total-players-count {
@@ -165,6 +166,7 @@ table thead th {
     border-bottom: 2px solid RED;
     z-index: 10; /* Ensure the header is above table rows */
 }
+
 
 table tbody tr {
     background: #2a2a2a;

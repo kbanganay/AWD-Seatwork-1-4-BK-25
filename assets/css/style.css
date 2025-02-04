@@ -96,22 +96,22 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Center vertically */
+    height: 100vh;
     font-size: 30px;
 }
 
 .get-started-btn a {
-    background-color: red; /* Button background color */
-    color: white; /* Text color */
-    padding: 15px 30px; /* Padding for the button */
-    border-radius: 5px; /* Rounded corners */
-    text-decoration: none; /* Remove underline */
-    transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+    background-color: red;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 .get-started-btn a:hover {
-    background-color: darkred; /* Darker background on hover */
-    transform: scale(1.05); /* Slightly enlarge the button */
+    background-color: darkred;
+    transform: scale(1.05);
 }
 
 .footer {

@@ -8,7 +8,7 @@ const playerCountElement = document.getElementById("current-player-count");
 let playerArray = [];
 
 function updatePlayerCountDisplay() {
-    playerCountElement.textContent = `Players added: ${playerArray.length}/10`;
+    playerCountElement.textContent = `PLAYERS: ${playerArray.length}/10`;
 }
 
 function renderPlayerListDisplay() {
@@ -21,10 +21,10 @@ function renderPlayerListDisplay() {
         nameCell.textContent = player.name;
 
         const scoreCell = document.createElement("td");
-        scoreCell.textContent = `${player.score}/100`;
+        scoreCell.textContent = `${player.score} / 999`;
 
         const levelCell = document.createElement("td");
-        levelCell.textContent = `Level ${player.level}`;
+        levelCell.textContent = `Level ${player.level} / 999`;
 
         rowElement.appendChild(nameCell);
         rowElement.appendChild(scoreCell);
@@ -53,7 +53,6 @@ function addNewPlayer() {
         return;
     }
 
-    // Check if score and level are within the 3-digit limit
     if (score < 0 || score > 999 || level < 1 || level > 999) {
         alert("Score must be between 0 and 999 and Level must be between 1 and 999.");
         return;
@@ -73,22 +72,20 @@ document.getElementById("btn-add-player").addEventListener("click", addNewPlayer
 document.getElementById('sort-options').addEventListener('change', function() {
     const sortBy = this.value;
 
-    // Sort players based on selected criteria
     playerArray.sort((a, b) => {
         if (sortBy === 'score' || sortBy === 'level') {
-            return b[sortBy] - a[sortBy]; // Descending order
+            return b[sortBy] - a[sortBy];
         } else if (sortBy === 'name') {
-            return a.name.localeCompare(b.name); // Ascending order
+            return a.name.localeCompare(b.name);
         }
     });
 
-    // Re-render the player list after sorting
     renderPlayerListDisplay();
 });
 
 document.getElementById("input-player-score").addEventListener("input", function() {
     if (this.value.length > 3) {
-        this.value = this.value.slice(0, 3); // Restrict to 3 digits
+        this.value = this.value.slice(0, 3);
     }
 });
 
@@ -97,4 +94,3 @@ document.getElementById("input-player-level").addEventListener("input", function
         this.value = this.value.slice(0, 3);
     }
 });
-

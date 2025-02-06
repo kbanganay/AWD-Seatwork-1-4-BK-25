@@ -4,7 +4,7 @@
 
 <br />
 <div align="center">
-  <a href="https://github.com/zyx-0314/">
+  <a href="https://github.com/kbanganay/">
   <!-- TODO: If you want to add logo or banner you can add it here -->
     <img src="./assets/img/Screenshot 2025-02-04 160044.png" alt="kB.LOGO" width="130" height="100">
   </a>
@@ -21,9 +21,9 @@ Effortlessly manage player data by storing names, scores, and levels for up to 1
 
 <!-- TODO: Change the zyx-0314 into your github username  -->
 <!-- TODO: Change the WD-Template-Project into the same name of your folder -->
-![](https://visit-counter.vercel.app/counter.png?page=zyx-0314/WD-Template-Project)
+![](https://visit-counter.vercel.app/counter.png?page=kbanganay/WD-Template-Project)
 
-[![wakatime](https://wakatime.com/badge/user/018dd99a-4985-4f98-8216-6ca6fe2ce0f8/project/63501637-9a31-42f0-960d-4d0ab47977f8.svg)](https://wakatime.com/badge/user/018dd99a-4985-4f98-8216-6ca6fe2ce0f8/project/63501637-9a31-42f0-960d-4d0ab47977f8)
+[![wakatime](https://wakatime.com/badge/user/c0c23368-c0f8-4661-ac0a-bf4e078f6e32/project/4deaa58f-c46c-442c-b425-9c86f4e4ec57.svg)](https://wakatime.com/badge/user/c0c23368-c0f8-4661-ac0a-bf4e078f6e32/project/4deaa58f-c46c-442c-b425-9c86f4e4ec57)
 
 ---
 
@@ -62,11 +62,7 @@ Effortlessly manage player data by storing names, scores, and levels for up to 1
 <!-- The following are just sample -->
 Description of the project in details.
 
-Guiding Question:
-- What is the project
-- Whats the purpose
-- What are key components
-- What technology used and how it is used
+The player management website organizes and displays player data, including names, scores, and levels, with sorting functionality for easy tracking and leaderboard management. It consists of a player list, sorting features, and an interactive UI with buttons or dropdowns, optionally including a search function and backend support. Built with HTML for structure, CSS for styling, and JavaScript for interactivity, it enables users to dynamically sort and manage player data efficiently.
 
 ### Key Components
 <!-- TODO: List of Key Components -->
@@ -98,16 +94,18 @@ WD-ProjectName
 |   └─ css
 |   |   └─ style.css
 |   └─ img
-|   |   └─ fileWith.jpeg/.jpg/.webp/.png
+|   |   └─ Gameroom.mp4
+|   |   └─ Screenshot 2025-02-04 160044.png
 |   └─ js
 |       └─ script.js
 └─ pages
-|  └─ pageName
+|  └─ page1
 |     └─ assets
 |     |  └─ css
 |     |  |  └─ style.css
 |     |  └─ img
-|     |  |  └─ fileWith.jpeg/.jpg/.webp/.png
+|     |  |  └─ 15398762.png
+|     |  |  └─ Gameroom.mp4
 |     |  └─ js
 |     |     └─ script.js
 |     └─ index.html
@@ -120,4 +118,5 @@ WD-ProjectName
 <!-- TODO: Add References -->
 | Title | Purpose | Link |
 |-|-|-|
-| Sample Title | Sample purpose would be here like this and this is the example of what it is. | trykolang.com |
+| youtube | i get a video from the youtube then put in my website. | youtube.com |
+| google | i get fonts from google. | google.com |

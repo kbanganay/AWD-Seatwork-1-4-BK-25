@@ -59,13 +59,35 @@ function addNewPlayer() {
     }
 
     playerArray.push({ name, score, level });
+
     playerNameInputElement.value = "";
     playerScoreInputElement.value = "";
     playerLevelInputElement.value = "";
 
+    localStorage.setItem("players", JSON.stringify(playerArray));
+
     updatePlayerCountDisplay();
     renderPlayerListDisplay();
 }
+
+function loadPlayerDataFromLocalStorage() {
+    const savedPlayers = localStorage.getItem("players");
+
+    if (savedPlayers) {
+        playerArray = JSON.parse(savedPlayers);
+        updatePlayerCountDisplay();
+        renderPlayerListDisplay();
+    }
+}
+
+function clearLocalStorage() {
+    localStorage.removeItem("players");
+    playerArray = [];
+    updatePlayerCountDisplay();
+    renderPlayerListDisplay();
+}
+
+loadPlayerDataFromLocalStorage();
 
 document.getElementById("btn-add-player").addEventListener("click", addNewPlayer);
 
@@ -94,3 +116,5 @@ document.getElementById("input-player-level").addEventListener("input", function
         this.value = this.value.slice(0, 3);
     }
 });
+
+document.getElementById("btn-clear-storage").addEventListener("click", clearLocalStorage);

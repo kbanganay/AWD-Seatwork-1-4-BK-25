@@ -26,10 +26,10 @@ body {
     background-color: transparent;
     padding: 10px;
     position: sticky;
-    top: 0; 
-    z-index: 1000; 
+    top: 0;
+    z-index: 1000;
     padding-bottom: 50px;
-    padding-top:px;
+    padding-top: 20px;
 }
 
 .nav-container {
@@ -54,7 +54,6 @@ body {
     font-weight: bold;
     position: relative;
     transition: color 0.3s ease;
-   
 }
 
 .nav-container ul li a::before {
@@ -75,8 +74,6 @@ body {
     transform: scaleX(1);
 }
 
-
-
 main {
     max-width: 800px;
     margin: 0 auto;
@@ -86,14 +83,14 @@ main {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
-#player-input-area {
+#player-input-section {
     margin-bottom: 20px;
 }
 
-.player-input-area h2, #leaderboard-area h2 {
+#player-input-section h2, #leaderboard-section h2 {
     margin-bottom: 10px;
-    color: RED;
-    text-align: center; /* Center text within the area */
+    color: WHITE;
+    text-align: center;
 }
 
 form {
@@ -110,63 +107,71 @@ form input {
     border-radius: 5px;
     background-color: #2a2a2a;
     color: white;
-    transition: border 0.2s ease;
-    
+    transition: border 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#input-player-name,
+#input-player-score,
+#input-player-level {
+    box-shadow: 0PX 1px 13px RED;
 }
 
 form input:focus {
-    border-color: RED;
+    border-color: red;
     outline: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 form button {
     padding: 10px 20px;
-    background: red; /* Original background color */
+    background: red;
     border: none;
     border-radius: 5px;
     color: white;
     font-size: 14px;
     cursor: pointer;
-    transition: background 0.2s ease, transform 0.2s ease; /* Added transition for transform */
+    transition: background 0.2s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 form button:hover {
-    background: darkred; /* Change to a darker red on hover */
-    transform: scale(1.05); /* Slightly increase the size on hover */
+    background: darkred;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-#total-players-count {
+#current-player-count {
     margin-top: 10px;
     font-size: 0.9rem;
     color: #888;
 }
 
 #leaderboard-section h2 {
-    margin: 0; /* Remove margin */
-    margin-bottom: 10px; /* Add space below the heading */
+    margin: 0;
+    margin-bottom: 10px;
     color: white;
-    text-align: center; /* Center text within the area */
+    text-align: center;
     font-size: 40px;
 }
 
 table {
-    width: 100%; /* Make the table take full width of its container */
-    max-width: 800px; /* Optional: limit the max width */
-    margin: 0 auto; /* Center the table */
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
     border-collapse: collapse;
 }
 
 table thead th {
-    position: sticky; /* Make the header sticky */
-    top: 0; /* Position at the top of the table */
-    background: RED; /* Set background color */
+    position: sticky;
+    top: 0;
+    background: red;
     color: white;
     padding: 15px;
     font-size: 14px;
-    border-bottom: 2px solid RED;
-    z-index: 10; /* Ensure the header is above table rows */
+    border-bottom: 2px solid red;
+    z-index: 10;
 }
-
 
 table tbody tr {
     background: #2a2a2a;
@@ -181,9 +186,9 @@ table tbody tr:hover {
     background: #3a3a3a;
 }
 
-table th, 
+table th,
 table td {
-    text-align: center; /* Center-align text in both header and body cells */
+    text-align: center;
 }
 
 table tbody td {
@@ -192,29 +197,67 @@ table tbody td {
     border-bottom: 1px solid #3a3a3a;
 }
 
-
 #leaderboard-section {
     max-width: 800px;
-    margin: 20px auto; 
-    padding: 20px 20px 0; /* Adjust padding to remove space at the top */
+    margin: 20px auto;
+    padding: 20px 20px 0;
     background: #1a1a1a;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    text-align: center; /* Center text within the area */
+    text-align: center;
     padding-bottom: 50px;
 }
 
 #leaderboard-section div {
-    margin-bottom: 15px; /* Space between dropdown and table */
+    margin-bottom: 15px;
 }
 
 #sort-options {
     padding: 5px;
     font-size: 16px;
-    
 }
 
 .input-error {
     border: 2px solid red !important;
     background-color: rgba(255, 0, 0, 0.1);
+}
+
+#btn-clear-storage {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: red;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+#btn-clear-storage:hover {
+    background: darkred;
+    transform: scale(1.05);
+}
+
+footer {
+    background-color: #1a1a1a;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 14px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: red;
 }
